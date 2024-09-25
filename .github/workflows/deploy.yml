@@ -1,0 +1,45 @@
+name: Build Python Executable
+
+  # Define when the workflow will trigger
+  # on:
+  #   push:
+  #       branches:
+  #             - main  # Triggers on push to the main branch
+  #               pull_request:
+  #                   branches:
+  #                         - main  # Triggers on PRs to the main branch
+  #
+  #                         # Define the build job
+  #                         jobs:
+  #                           build:
+  #                               runs-on: ubuntu-latest  # Use the latest Ubuntu runner (works for most Linux setups)
+  #
+  #                                   steps:
+  #                                         # Step 1: Check out the code from the repository
+  #                                               - name: Checkout repository
+  #                                                       uses: actions/checkout@v2
+  #
+  #                                                             # Step 2: Set up Python environment
+  #                                                                   - name: Set up Python 3.8
+  #                                                                           uses: actions/setup-python@v2
+  #                                                                                   with:
+  #                                                                                             python-version: '3.8'  # Specify Python version explicitly
+  #
+  #                                                                                                   # Step 3: Install Python dependencies
+  #                                                                                                         - name: Install dependencies
+  #                                                                                                                 run: |
+  #                                                                                                                           python -m pip install --upgrade pip
+  #                                                                                                                                     pip install pyinstaller
+  #
+  #                                                                                                                                           # Step 4: Build the executable using PyInstaller
+  #                                                                                                                                                 - name: Build the executable
+  #                                                                                                                                                         run: |
+  #                                                                                                                                                                   pyinstaller --onefile your_script.py  # Replace with your script's name
+  #
+  #                                                                                                                                                                         # Step 5: Upload the build artifact (executable)
+  #                                                                                                                                                                               - name: Upload executable
+  #                                                                                                                                                                                       uses: actions/upload-artifact@v2
+  #                                                                                                                                                                                               with:
+  #                                                                                                                                                                                                         name: my-python-executable  # The name of the artifact to download from GitHub
+  #                                                                                                                                                                                                                   path: ./dist/your_script    # Path to the generated executable
+  #
